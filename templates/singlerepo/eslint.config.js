@@ -7,7 +7,6 @@ export default antfu({
         ...zin.standard,
         ...zin.recommended,
         ...zin.stylistic,
-        ...zin.patch,
-        "antfu/no-top-level-await": "off"
+        ...zin.patch
     }
 });

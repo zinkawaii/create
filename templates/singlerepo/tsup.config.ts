@@ -5,11 +5,10 @@ export default defineConfig({
         "./src/index.ts"
     ],
     format: [
+        "cjs",
         "esm"
     ],
     clean: true,
-    shims: true,
-    banner: {
-        js: "#!/usr/bin/env node"
-    }
+    dts: true,
+    shims: true
 });

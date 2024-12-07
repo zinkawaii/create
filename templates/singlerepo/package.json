@@ -1,36 +1,40 @@
 {
-  "name": "@zinkawaii/start",
+  "name": "<%= projectName %>",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@9.14.0",
   "description": "",
   "author": "KazariEX",
   "license": "MIT",
-  "repository": "KazariEX/start",
+  "repository": "KazariEX/<%= projectName %>",
   "keywords": [],
-  "bin": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "templates"
+    "dist"
   ],
   "scripts": {
     "build": "tsup-node",
-    "watch": "tsup-node --watch",
+    "dev": "tsup-node --watch",
     "prepack": "pnpm run build",
     "release": "bumpp --no-push -c \"release: v%s\"",
+    "test": "vitest",
     "eslint": "eslint ."
-  },
-  "dependencies": {
-    "@inquirer/prompts": "^7.1.0",
-    "consola": "^3.2.3",
-    "ejs": "^3.1.10"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.11.2",
-    "@types/ejs": "^3.1.5",
     "@zinkawaii/eslint-config": "^0.1.8",
     "bumpp": "^9.8.1",
     "eslint": "^9.16.0",
-    "tsup": "^8.3.5"
+    "tsup": "^8.3.5",
+    "vitest": "^2.1.8"
   }
 }
