@@ -8,7 +8,6 @@ export default defineConfig({
         "esm"
     ],
     clean: true,
-    shims: true,
     banner: {
         js: "#!/usr/bin/env node"
     }

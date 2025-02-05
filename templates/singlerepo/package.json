@@ -2,20 +2,16 @@
   "name": "<%= projectName %>",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@9.14.0",
+  "packageManager": "pnpm@10.2.0",
   "description": "",
   "author": "KazariEX",
   "license": "MIT",
   "repository": "KazariEX/<%= projectName %>",
   "keywords": [],
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
+    ".": "./dist/index.js"
   },
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -30,11 +26,11 @@
     "eslint": "eslint ."
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.12.1",
-    "@zinkawaii/eslint-config": "^0.1.9",
-    "bumpp": "^9.9.2",
-    "eslint": "^9.17.0",
-    "tsup": "^8.3.5",
-    "vitest": "^2.1.8"
+    "@antfu/eslint-config": "^4.1.1",
+    "@zinkawaii/eslint-config": "^0.1.10",
+    "bumpp": "^10.0.1",
+    "eslint": "^9.19.0",
+    "tsup": "^8.3.6",
+    "vitest": "^3.0.5"
   }
 }
