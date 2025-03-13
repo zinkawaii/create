@@ -1,0 +1,31 @@
+{
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@10.6.1",
+  "scripts": {
+    "build": "nuxi build",
+    "dev": "nuxi dev --no-qr",
+    "prepare": "nuxi prepare",
+    "preview": "nuxi preview",
+    "tscheck": "vue-tsc"
+  },
+  "dependencies": {
+    "@vueuse/core": "^13.0.0",
+    "pinia": "^3.0.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.10.1",
+    "@nuxt/devtools": "^2.3.0",
+    "@nuxt/icon": "^1.11.0",
+    "@pinia/nuxt": "^0.10.1",
+    "@unocss/nuxt": "^66.0.0",
+    "@vueuse/nuxt": "^13.0.0",
+    "@zinkawaii/eslint-config": "^0.2.0",
+    "@zinkawaii/stylelint-config": "^0.3.0",
+    "nuxt": "^3.16.0",
+    "unocss": "^66.0.0",
+    "vue-tsc": "^2.2.8"
+  }
+}
