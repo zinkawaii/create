@@ -11,7 +11,9 @@
   "bin": "./dist/index.js",
   "files": [
     "dist",
-    "templates"
+    "templates",
+    "templates/*/.gitignore",
+    "templates/*/.npmrc"
   ],
   "scripts": {
     "build": "tsup-node",
