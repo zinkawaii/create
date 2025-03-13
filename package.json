@@ -2,7 +2,7 @@
   "name": "@zinkawaii/create",
   "type": "module",
   "version": "0.0.4",
-  "packageManager": "pnpm@10.2.0",
+  "packageManager": "pnpm@10.6.1",
   "description": "",
   "author": "KazariEX",
   "license": "MIT",
@@ -23,16 +23,21 @@
     "eslint": "eslint ."
   },
   "dependencies": {
-    "@inquirer/prompts": "^7.3.1",
+    "@inquirer/prompts": "^7.3.3",
     "consola": "^3.4.0",
     "ejs": "^3.1.10"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.1.1",
+    "@antfu/eslint-config": "^4.10.1",
     "@types/ejs": "^3.1.5",
-    "@zinkawaii/eslint-config": "^0.1.10",
-    "bumpp": "^10.0.1",
-    "eslint": "^9.19.0",
-    "tsup": "^8.3.6"
+    "@zinkawaii/eslint-config": "^0.2.0",
+    "bumpp": "^10.1.0",
+    "eslint": "^9.22.0",
+    "tsup": "^8.4.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
