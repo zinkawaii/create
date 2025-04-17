@@ -1,4 +1,4 @@
-import { defineConfig } from "tsup";
+import { defineConfig } from "tsdown";
 
 export default defineConfig({
     entry: [
@@ -8,7 +8,7 @@ export default defineConfig({
         "esm"
     ],
     clean: true,
-    banner: {
-        js: "#!/usr/bin/env node"
+    outputOptions: {
+        banner: "#!/usr/bin/env node"
     }
 });

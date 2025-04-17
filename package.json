@@ -16,8 +16,8 @@
     "templates/*/.npmrc"
   ],
   "scripts": {
-    "build": "tsup-node",
-    "watch": "tsup-node --watch",
+    "build": "tsdown",
+    "dev": "tsdown -w",
     "prepack": "pnpm run build",
     "release": "bumpp --no-push -c \"release: v%s\"",
     "eslint": "eslint ."
@@ -33,7 +33,7 @@
     "@zinkawaii/eslint-config": "^0.2.0",
     "bumpp": "^10.1.0",
     "eslint": "^9.22.0",
-    "tsup": "^8.4.0"
+    "tsdown": "^0.8.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
