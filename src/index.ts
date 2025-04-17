@@ -1,3 +1,4 @@
+import { execSync } from "node:child_process";
 import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
 import { join, relative, resolve } from "node:path";
 import { input, select } from "@inquirer/prompts";
@@ -17,6 +18,12 @@ const templateType = await select<string>({
 
 const templateDir = join(baseDir, templateType);
 const folder = resolve(process.cwd(), projectName);
+const pnpmVersion = getPnpmVersion();
+
+const data = {
+    projectName,
+    pnpmVersion
+};
 
 try {
     await stat(folder);
@@ -42,10 +49,17 @@ async function generateFiles(dir: string) {
         }
 
         const file = await readFile(path);
-        const result = render(file.toString(), {
-            projectName
-        });
+        const result = render(file.toString(), data);
 
         await writeFile(outputPath, result);
+    }
+}
+
+function getPnpmVersion() {
+    try {
+        return execSync("pnpm -v").toString().trim();
+    }
+    catch {
+        throw new Error("Could not detect pnpm.");
     }
 }

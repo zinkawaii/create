@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.8.1",
+  "packageManager": "pnpm@<%= pnpmVersion %>",
   "scripts": {
     "build": "nuxi build",
     "dev": "nuxi dev --no-qr",
