@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@<%= pnpmVersion %>",
+  "scripts": {
+    "release": "bumpp --no-push -c \"release: v%s\"",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:",
+    "@zinkawaii/eslint-config": "catalog:",
+    "@zinkawaii/tsconfig": "catalog:",
+    "bumpp": "catalog:",
+    "eslint": "catalog:",
+    "tsdown": "catalog:",
+    "vitest": "catalog:"
+  }
+}
