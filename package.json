@@ -6,7 +6,7 @@
   "description": "",
   "author": "KazariEX",
   "license": "MIT",
-  "repository": "KazariEX/create",
+  "repository": "zinkawaii/create",
   "keywords": [],
   "bin": "./dist/index.js",
   "files": [
