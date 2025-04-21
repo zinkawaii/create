@@ -1,11 +1,12 @@
 import { execSync } from "node:child_process";
 import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
-import { join, relative, resolve } from "node:path";
+import { join, resolve } from "node:path";
 import { input, select } from "@inquirer/prompts";
 import consola from "consola";
 import { render } from "ejs";
 
-const baseDir = resolve(import.meta.dirname, "../templates");
+const templatesDir = resolve(import.meta.dirname, "../templates");
+const templateDirs = (await readdir(templatesDir)).filter((name) => name !== "shared");
 
 const projectName = await input({
     message: "Project name:"
@@ -13,11 +14,12 @@ const projectName = await input({
 
 const templateType = await select<string>({
     message: "Select a template:",
-    choices: await readdir(baseDir)
+    choices: templateDirs
 });
 
-const templateDir = join(baseDir, templateType);
-const folder = resolve(process.cwd(), projectName);
+const sharedDir = join(templatesDir, "shared");
+const templateDir = join(templatesDir, templateType);
+const baseDir = resolve(process.cwd(), projectName);
 const pnpmVersion = getPnpmVersion();
 
 const data = {
@@ -26,32 +28,31 @@ const data = {
 };
 
 try {
-    await stat(folder);
-    consola.error(`Folder "${folder}" exists.`);
+    await stat(baseDir);
+    consola.error(`Folder "${baseDir}" exists.`);
 }
 catch {
-    await mkdir(folder);
-    await generateFiles(templateDir);
+    await mkdir(baseDir);
+    await generateFiles(sharedDir, baseDir);
+    await generateFiles(templateDir, baseDir);
 }
 
-async function generateFiles(dir: string) {
-    const names = await readdir(dir);
+async function generateFiles(sourceDir: string, targetDir: string) {
+    const names = await readdir(sourceDir);
     for (const name of names) {
-        const path = join(dir, name);
-        const relativePath = relative(templateDir, path);
-        const outputPath = join(folder, relativePath);
+        const sourcePath = join(sourceDir, name);
+        const targetPath = join(targetDir, name);
 
-        const stats = await stat(path);
+        const stats = await stat(sourcePath);
         if (stats.isDirectory()) {
-            await mkdir(outputPath);
-            await generateFiles(path);
+            await mkdir(targetPath);
+            await generateFiles(sourcePath, targetPath);
             continue;
         }
 
-        const file = await readFile(path);
+        const file = await readFile(sourcePath);
         const result = render(file.toString(), data);
-
-        await writeFile(outputPath, result);
+        await writeFile(targetPath, result);
     }
 }
 
