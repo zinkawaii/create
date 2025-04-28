@@ -1,5 +1,5 @@
 {
-  "name": "@zinkawaii/create",
+  "name": "create-zin",
   "type": "module",
   "version": "0.0.7",
   "packageManager": "pnpm@10.8.1",
