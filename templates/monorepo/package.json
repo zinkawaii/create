@@ -3,7 +3,7 @@
   "private": true,
   "packageManager": "pnpm@<%= pnpmVersion %>",
   "scripts": {
-    "release": "bumpp --no-push -c \"release: v%s\"",
+    "release": "bumpp -r --no-push -c \"release: v%s\"",
     "test": "vitest"
   },
   "devDependencies": {
