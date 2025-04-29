@@ -8,7 +8,7 @@
   "repository": "KazariEX/<%= projectName %>",
   "keywords": [],
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./src/index.ts"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -16,6 +16,11 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "exports": {
+      ".": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsdown",
     "dev": "tsdown -w",

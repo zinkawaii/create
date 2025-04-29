@@ -30,7 +30,7 @@
     "@zinkawaii/tsconfig": "^0.0.1",
     "bumpp": "^10.1.0",
     "eslint": "^9.25.1",
-    "tsdown": "^0.10.0",
+    "tsdown": "^0.10.2",
     "vitest": "^3.1.2"
   }
 }
