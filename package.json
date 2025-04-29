@@ -22,8 +22,7 @@
     "release": "bumpp --no-push -c \"release: v%s\""
   },
   "dependencies": {
-    "@inquirer/prompts": "^7.5.0",
-    "consola": "^3.4.2",
+    "@clack/prompts": "^0.10.1",
     "ejs": "^3.1.10"
   },
   "devDependencies": {

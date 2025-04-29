@@ -1,20 +1,25 @@
 import { execSync } from "node:child_process";
 import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
-import { input, select } from "@inquirer/prompts";
-import consola from "consola";
+import * as p from "@clack/prompts";
 import { render } from "ejs";
 
 const templatesDir = resolve(import.meta.dirname, "../templates");
 const templateDirs = (await readdir(templatesDir)).filter((name) => name !== "shared");
 
-const projectName = await input({
-    message: "Project name:"
-});
-
-const templateType = await select<string>({
-    message: "Select a template:",
-    choices: templateDirs
+const { projectName, templateType } = await p.group({
+    projectName: () => p.text({
+        message: "Project name:"
+    }),
+    templateType: () => p.select({
+        message: "Template type:",
+        options: templateDirs.map((dir) => ({ value: dir }))
+    })
+}, {
+    onCancel() {
+        p.cancel();
+        process.exit(0);
+    }
 });
 
 const sharedDir = join(templatesDir, "shared");
@@ -27,14 +32,39 @@ const data = {
     pnpmVersion
 };
 
-try {
-    await stat(baseDir);
-    consola.error(`Folder "${baseDir}" exists.`);
-}
-catch {
+if (await checkDirectory(baseDir)) {
     await mkdir(baseDir);
     await generateFiles(sharedDir, baseDir);
     await generateFiles(templateDir, baseDir);
+}
+p.outro();
+
+function getPnpmVersion() {
+    try {
+        return execSync("pnpm -v").toString().trim();
+    }
+    catch {
+        p.log.error("Could not detect pnpm.");
+        p.outro();
+        process.exit(0);
+    }
+}
+
+async function checkDirectory(path: string) {
+    try {
+        const stats = await stat(path);
+        if (!stats.isDirectory()) {
+            p.log.error(`Path "${baseDir}" is not a directory.`);
+            return false;
+        }
+        const files = await readdir(path);
+        if (files.length) {
+            p.log.error(`Folder "${baseDir}" is not empty.`);
+            return false;
+        }
+    }
+    catch {}
+    return true;
 }
 
 async function generateFiles(sourceDir: string, targetDir: string) {
@@ -53,14 +83,5 @@ async function generateFiles(sourceDir: string, targetDir: string) {
         const file = await readFile(sourcePath);
         const result = render(file.toString(), data);
         await writeFile(targetPath, result);
-    }
-}
-
-function getPnpmVersion() {
-    try {
-        return execSync("pnpm -v").toString().trim();
-    }
-    catch {
-        throw new Error("Could not detect pnpm.");
     }
 }
