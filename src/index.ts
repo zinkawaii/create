@@ -10,20 +10,20 @@ const templateDirs = (await readdir(templatesDir)).filter((name) => name !== "sh
 const { templateType, projectName, author } = await p.group({
     templateType: () => p.select({
         message: "Template type:",
-        options: templateDirs.map((dir) => ({ value: dir }))
+        options: templateDirs.map((dir) => ({ value: dir })),
     }),
     projectName: () => p.text({
-        message: "Project name:"
+        message: "Project name:",
     }),
     author: () => p.text({
         message: "Author name:",
-        defaultValue: packageJson.author
-    })
+        defaultValue: packageJson.author,
+    }),
 }, {
     onCancel() {
         p.cancel();
         process.exit(0);
-    }
+    },
 });
 
 const sharedDir = join(templatesDir, "shared");
@@ -34,7 +34,7 @@ const pnpmVersion = getPnpmVersion();
 const data = {
     author,
     projectName,
-    pnpmVersion
+    pnpmVersion,
 };
 
 if (await checkDirectory(baseDir)) {

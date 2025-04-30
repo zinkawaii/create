@@ -15,12 +15,9 @@ importers:
       '@antfu/eslint-config':
         specifier: ^4.12.0
         version: 4.12.0(@typescript-eslint/utils@8.31.1(eslint@9.25.1(jiti@2.4.2))(typescript@5.7.2))(@vue/compiler-sfc@3.5.13)(eslint@9.25.1(jiti@2.4.2))(typescript@5.7.2)(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.10.1)(jiti@2.4.2)(lightningcss@1.29.3)(yaml@2.7.1))
-      '@types/ejs':
-        specifier: ^3.1.5
-        version: 3.1.5
       '@zinkawaii/eslint-config':
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
       '@zinkawaii/tsconfig':
         specifier: ^0.0.1
         version: 0.0.1
@@ -707,9 +704,6 @@ packages:
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
 
-  '@types/ejs@3.1.5':
-    resolution: {integrity: sha512-nv+GSx77ZtXiJzwKdsASqi+YQ5Z7vwHsTP0JY2SiQgjGckkBRKZnk8nIM+7oUZ1VCtuTz0+By4qVR7fqzp/Dfg==}
-
   '@types/eslint@9.6.1':
     resolution: {integrity: sha512-FXx2pKgId/WyYo2jXw63kk7/+TY7u7AziEJxJAnSFzHlqTAS3Ync6SvgYAN/k4/PQpnnVuzoMuVnByKK2qp0ag==}
 
@@ -931,8 +925,8 @@ packages:
   '@vue/shared@3.5.13':
     resolution: {integrity: sha512-/hnE/qP5ZoGpol0a5mDi45bOd7t3tjYJBjsgCsivow7D48cJeV5l05RD82lPqi7gRiphZM37rnhW1l6ZoCNNnQ==}
 
-  '@zinkawaii/eslint-config@0.2.3':
-    resolution: {integrity: sha512-T4qqClP+R8FsaEPdodVcefcaR79O6xR2caC51Wqnuxi/PtFocAloRN97GgBELaaD2lFLuZrr1YEqHEQWSVeoSg==}
+  '@zinkawaii/eslint-config@0.3.0':
+    resolution: {integrity: sha512-gwmqXUDZAnxMhSaZhEwAwGMLcij3IccB69n2zdIfA3JQVa9lS33m+etwgAVeGhNIAFZxKeVx8qQBLzY1rZf8pg==}
 
   '@zinkawaii/tsconfig@0.0.1':
     resolution: {integrity: sha512-uO40UtaaIMjc88J/NdKaF0O8mP3fm/jBhiCoMAHdCzSfincB4KJ5ddCf1yhzj8Inxl+MwjirXKAQ5e7QaLawGg==}
@@ -2891,8 +2885,6 @@ snapshots:
     dependencies:
       '@types/ms': 2.1.0
 
-  '@types/ejs@3.1.5': {}
-
   '@types/eslint@9.6.1':
     dependencies:
       '@types/estree': 1.0.7
@@ -3143,7 +3135,7 @@ snapshots:
 
   '@vue/shared@3.5.13': {}
 
-  '@zinkawaii/eslint-config@0.2.3': {}
+  '@zinkawaii/eslint-config@0.3.0': {}
 
   '@zinkawaii/tsconfig@0.0.1': {}
 
