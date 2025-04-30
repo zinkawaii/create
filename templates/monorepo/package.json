@@ -1,10 +1,10 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@<%= pnpmVersion %>",
+  "packageManager": "pnpm@{{ pnpmVersion }}",
   "scripts": {
-    "build": "pnpm --filter @<%= projectName %>/core... build",
-    "dev": "pnpm --filter @<%= projectName %>/core... --parallel dev",
+    "build": "pnpm --filter @{{ projectName }}/core... build",
+    "dev": "pnpm --filter @{{ projectName }}/core... --parallel dev",
     "release": "bumpp -r --no-push -c \"release: v%s\"",
     "test": "vitest"
   },

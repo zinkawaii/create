@@ -2,7 +2,7 @@
   "name": "create-zin",
   "type": "module",
   "version": "0.0.9",
-  "packageManager": "pnpm@10.8.1",
+  "packageManager": "pnpm@10.10.0",
   "description": "",
   "author": "KazariEX",
   "license": "MIT",
@@ -22,8 +22,7 @@
     "release": "bumpp --no-push -c \"release: v%s\""
   },
   "dependencies": {
-    "@clack/prompts": "^0.10.1",
-    "ejs": "^3.1.10"
+    "@clack/prompts": "^0.10.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.12.0",
@@ -32,7 +31,7 @@
     "@zinkawaii/tsconfig": "^0.0.1",
     "bumpp": "^10.1.0",
     "eslint": "^9.25.1",
-    "tsdown": "^0.10.0"
+    "tsdown": "^0.10.2"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

@@ -1,11 +1,11 @@
 {
-  "name": "@<%= projectName %>/core",
+  "name": "@{{ projectName }}/core",
   "type": "module",
   "version": "0.0.0",
   "description": "",
   "author": "KazariEX",
   "license": "MIT",
-  "repository": "KazariEX/<%= projectName %>",
+  "repository": "KazariEX/{{ projectName }}",
   "keywords": [],
   "exports": {
     ".": "./src/index.ts"

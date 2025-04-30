@@ -1,1 +1,1 @@
-# <%= projectName %>
+# {{ projectName }}

@@ -80,8 +80,15 @@ async function generateFiles(sourceDir: string, targetDir: string) {
             continue;
         }
 
-        const file = await readFile(sourcePath);
-        const result = render(file.toString(), data);
+        const file = await readFile(sourcePath, "utf-8");
+        const result = interpolate(file, data);
         await writeFile(targetPath, result);
     }
+}
+
+function interpolate(template: string, data: Record<string, any>) {
+    return template.replace(/\{\{(.*?)\}\}/g, (match, ...args) => {
+        const name = args[0].trim();
+        return data[name] ?? match;
+    });
 }
