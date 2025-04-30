@@ -2,18 +2,22 @@ import { execSync } from "node:child_process";
 import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import * as p from "@clack/prompts";
-import { render } from "ejs";
+import packageJson from "../package.json";
 
 const templatesDir = resolve(import.meta.dirname, "../templates");
 const templateDirs = (await readdir(templatesDir)).filter((name) => name !== "shared");
 
-const { projectName, templateType } = await p.group({
-    projectName: () => p.text({
-        message: "Project name:"
-    }),
+const { templateType, projectName, author } = await p.group({
     templateType: () => p.select({
         message: "Template type:",
         options: templateDirs.map((dir) => ({ value: dir }))
+    }),
+    projectName: () => p.text({
+        message: "Project name:"
+    }),
+    author: () => p.text({
+        message: "Author name:",
+        defaultValue: packageJson.author
     })
 }, {
     onCancel() {
@@ -28,6 +32,7 @@ const baseDir = resolve(process.cwd(), projectName);
 const pnpmVersion = getPnpmVersion();
 
 const data = {
+    author,
     projectName,
     pnpmVersion
 };

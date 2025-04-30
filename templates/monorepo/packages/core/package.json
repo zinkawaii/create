@@ -3,9 +3,9 @@
   "type": "module",
   "version": "0.0.0",
   "description": "",
-  "author": "KazariEX",
+  "author": "{{ author }}",
   "license": "MIT",
-  "repository": "KazariEX/{{ projectName }}",
+  "repository": "{{ author }}/{{ projectName }}",
   "keywords": [],
   "exports": {
     ".": "./src/index.ts"

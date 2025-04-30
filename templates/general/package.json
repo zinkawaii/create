@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "packageManager": "pnpm@{{ pnpmVersion }}",
   "description": "",
-  "author": "KazariEX",
+  "author": "{{ author }}",
   "license": "MIT",
-  "repository": "KazariEX/{{ projectName }}",
+  "repository": "{{ author }}/{{ projectName }}",
   "keywords": [],
   "exports": {
     ".": "./dist/index.js"
