@@ -2,7 +2,7 @@ import { execSync } from "node:child_process";
 import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import * as p from "@clack/prompts";
-import packageJson from "../package.json";
+import * as packageJson from "../package.json";
 
 const templatesDir = resolve(import.meta.dirname, "../templates");
 const templateDirs = (await readdir(templatesDir)).filter((name) => name !== "shared");
@@ -49,9 +49,7 @@ function getPnpmVersion() {
         return execSync("pnpm -v").toString().trim();
     }
     catch {
-        p.log.error("Could not detect pnpm.");
-        p.outro();
-        process.exit(0);
+        return packageJson.packageManager.split("@")[1];
     }
 }
 
