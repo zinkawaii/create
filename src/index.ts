@@ -72,7 +72,8 @@ async function checkDirectory(path: string) {
 
 async function generateFiles(sourceDir: string, targetDir: string) {
     const names = await readdir(sourceDir);
-    for (const name of names) {
+
+    await Promise.all(names.map(async (name) => {
         const sourcePath = join(sourceDir, name);
         const targetPath = join(targetDir, name);
 
@@ -80,13 +81,13 @@ async function generateFiles(sourceDir: string, targetDir: string) {
         if (stats.isDirectory()) {
             await mkdir(targetPath);
             await generateFiles(sourcePath, targetPath);
-            continue;
+            return;
         }
 
         const file = await readFile(sourcePath, "utf-8");
         const result = interpolate(file, data);
         await writeFile(targetPath, result);
-    }
+    }));
 }
 
 function interpolate(template: string, data: Record<string, any>) {
