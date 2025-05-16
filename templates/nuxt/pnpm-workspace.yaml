@@ -1,0 +1,22 @@
+shamefullyHoist: true
+
+packages:
+  - packages/*
+
+catalog:
+  "@antfu/eslint-config": ^4.13.1
+  "@nuxt/devtools": ^2.4.1
+  "@nuxt/icon": ^1.13.0
+  "@pinia/nuxt": ^0.11.0
+  "@unocss/nuxt": ^66.1.2
+  "@vueuse/core": ^13.2.0
+  "@vueuse/nuxt": ^13.2.0
+  "@zinkawaii/eslint-config": ^0.3.0
+  "@zinkawaii/stylelint-config": ^0.3.1
+  eslint: ^9.26.0
+  nuxt: ^3.17.3
+  pinia: ^3.0.2
+  unocss: ^66.1.2
+  vue: ^3.5.14
+  vue-router: ^4.5.1
+  vue-tsc: ^2.2.10

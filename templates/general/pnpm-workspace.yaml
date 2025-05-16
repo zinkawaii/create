@@ -1,8 +1,5 @@
 shamefullyHoist: true
 
-packages:
-  - packages/*
-
 catalog:
   "@antfu/eslint-config": ^4.13.1
   "@zinkawaii/eslint-config": ^0.3.0
