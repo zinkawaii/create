@@ -25,7 +25,6 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "catalog:",
     "@zinkawaii/eslint-config": "catalog:",
     "@zinkawaii/tsconfig": "catalog:",
     "bumpp": "catalog:",

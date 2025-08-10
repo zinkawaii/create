@@ -2,7 +2,7 @@
   "name": "create-zin",
   "type": "module",
   "version": "0.0.11",
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.14.0",
   "description": "Utakata na Shiawase",
   "author": "KazariEX",
   "license": "MIT",
@@ -12,8 +12,7 @@
   "files": [
     "dist",
     "templates",
-    "templates/*/.gitignore",
-    "templates/*/.npmrc"
+    "templates/*/.gitignore"
   ],
   "scripts": {
     "build": "tsdown",
@@ -25,7 +24,6 @@
     "@clack/prompts": "catalog:"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "catalog:",
     "@zinkawaii/eslint-config": "catalog:",
     "@zinkawaii/tsconfig": "catalog:",
     "bumpp": "catalog:",

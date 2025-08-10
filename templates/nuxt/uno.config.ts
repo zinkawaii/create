@@ -1,8 +1,14 @@
-import { defineConfig, presetAttributify, presetWind4 } from "unocss";
+import { defineConfig, presetAttributify, presetWind3, transformerDirectives, transformerVariantGroup } from "unocss";
 
 export default defineConfig({
     presets: [
         presetAttributify(),
-        presetWind4(),
+        presetWind3({
+            dark: "media",
+        }),
+    ],
+    transformers: [
+        transformerDirectives(),
+        transformerVariantGroup(),
     ],
 });

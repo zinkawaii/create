@@ -1,15 +1,13 @@
 shamefullyHoist: true
 
 catalog:
-  "@antfu/eslint-config": ^4.13.1
-  "@clack/prompts": ^0.10.1
-  "@zinkawaii/eslint-config": ^0.3.0
+  "@clack/prompts": ^0.11.0
+  "@zinkawaii/eslint-config": ^0.4.1
   "@zinkawaii/tsconfig": ^0.0.2
-  bumpp: ^10.1.1
-  eslint: ^9.26.0
-  tsdown: ^0.11.9
+  bumpp: ^10.2.2
+  eslint: ^9.33.0
+  tsdown: ^0.14.0
 
 onlyBuiltDependencies:
-  - esbuild
   - rolldown
   - unrs-resolver
