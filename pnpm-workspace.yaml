@@ -4,10 +4,9 @@ catalog:
   "@clack/prompts": ^0.11.0
   "@zinkawaii/eslint-config": ^0.4.1
   "@zinkawaii/tsconfig": ^0.0.2
-  bumpp: ^10.2.2
-  eslint: ^9.33.0
-  tsdown: ^0.14.0
+  bumpp: ^10.2.3
+  eslint: ^9.36.0
+  tsdown: ^0.15.6
 
 onlyBuiltDependencies:
-  - rolldown
-  - unrs-resolver
+  - esbuild

@@ -2,7 +2,7 @@
   "name": "create-zin",
   "type": "module",
   "version": "0.0.12",
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.17.1",
   "description": "Utakata na Shiawase",
   "author": "KazariEX",
   "license": "MIT",
