@@ -1,7 +1,7 @@
 {
   "name": "create-zin",
   "type": "module",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "packageManager": "pnpm@10.30.3",
   "description": "Utakata na Shiawase",
   "author": "KazariEX",
