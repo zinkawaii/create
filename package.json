@@ -2,13 +2,13 @@
   "name": "create-zin",
   "type": "module",
   "version": "0.0.13",
-  "packageManager": "pnpm@10.17.1",
+  "packageManager": "pnpm@10.30.3",
   "description": "Utakata na Shiawase",
   "author": "KazariEX",
   "license": "MIT",
   "repository": "zinkawaii/create",
   "keywords": [],
-  "bin": "./dist/index.js",
+  "bin": "./dist/index.mjs",
   "files": [
     "dist",
     "templates",
@@ -24,6 +24,7 @@
     "@clack/prompts": "catalog:"
   },
   "devDependencies": {
+    "@types/node": "catalog:",
     "@zinkawaii/eslint-config": "catalog:",
     "@zinkawaii/tsconfig": "catalog:",
     "bumpp": "catalog:",

@@ -9,10 +9,8 @@
   "repository": "{{ author }}/{{ projectName }}",
   "keywords": [],
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.mjs"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
